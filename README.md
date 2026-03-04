@@ -11,17 +11,18 @@ StateLens is a lightweight, zero-dependency JavaScript utility to visualize your
 ## 🚀 Quick Start
 
 1. Include the script:
-<script src="statelens.js"></script>
+`` <script src="statelens.js"></script> ``
 
 2. Initialize with your state:
+```html
 const myStore = new StateLens({
-  user: { name: 'Alex', score: 10 },
-  isLoading: false
+    user: { name: 'Alex', score: 10 },
+    isLoading: false
 });
 
 // Any change to myStore.state will automatically update the UI!
 myStore.state.user.score = 11;
-
+```
 🛠 Tech Stack
 * JavaScript (ES6+)
 * Proxy API for reactivity
