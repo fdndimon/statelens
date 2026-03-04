@@ -8,6 +8,9 @@ StateLens is a lightweight, zero-dependency JavaScript utility to visualize your
 - **Visual Feedback**: Highlights state updates in the UI.
 - **Isolated Styles**: Uses Shadow DOM to prevent CSS leaking into your project.
 
+## Access
+https://fdndimon.github.io/statelens/
+
 ## 🚀 Quick Start
 
 1. Include the script:
