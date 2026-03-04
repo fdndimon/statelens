@@ -11,7 +11,6 @@ StateLens is a lightweight, zero-dependency JavaScript utility to visualize your
 ## 🚀 Quick Start
 
 1. Include the script:
-```html
 <script src="statelens.js"></script>
 
 2. Initialize with your state:
