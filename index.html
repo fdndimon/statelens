@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StateLens Demo</title>
+    <style>
+        body { font-family: system-ui, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+        button { padding: 10px 20px; font-size: 1rem; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 6px; }
+        input { padding: 10px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 10px; display: block; width: 100%; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>StateLens Demo</h1>
+    <p>Type something or click the button to see the state change!</p>
+    <input type="text" id="nameInput" placeholder="Enter name...">
+    <button id="btn">Increment Score</button>
+</div>
+
+<script src="statelens.js"></script>
+<script>
+    // Initialize our lens
+    const lens = new StateLens({
+        user: { name: 'Guest', score: 0 },
+        settings: { theme: 'dark' },
+        lastAction: 'init'
+    });
+
+    // Link UI to state
+    const input = document.getElementById('nameInput');
+    const btn = document.getElementById('btn');
+
+    input.oninput = (e) => {
+        lens.state.user.name = e.target.value;
+        lens.state.lastAction = 'rename';
+    };
+
+    btn.onclick = () => {
+        lens.state.user.score++;
+        lens.state.lastAction = 'increment';
+    };
+</script>
+</body>
+</html>
